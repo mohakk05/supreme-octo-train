@@ -1,0 +1,6 @@
+hw3_input_data:
+  object_type: pipeline
+  object_uuid: hw3_t2
+  outdated_after:
+    weeks: 2
+  repo_path: /home/src/homework_03
