@@ -1,0 +1,12 @@
+FROM agrigorev/zoomcamp-model:mlops-2024-3.10.13-slim
+
+ENV PIPENV_VENV_IN_PROJECT=1
+
+COPY Pipfile Pipfile.lock ./
+RUN python -m pip install --upgrade pip
+RUN pip install pipenv && pipenv install --dev --system --deploy
+# do stuff here
+WORKDIR /app
+COPY starter.py ./
+
+CMD ["python", "./starter.py" ,"2023", "5"]
