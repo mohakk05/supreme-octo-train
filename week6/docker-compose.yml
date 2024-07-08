@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "4566:4566"            # LocalStack Gateway
+      - "127.0.0.1:4510-4559:4510-4559"  # external services port range
+    environment:
+      # LocalStack configuration: https://docs.localstack.cloud/references/configuration/
+      - AWS_ACCESS_KEY_ID=qwerty
+      - AWS_SECRET_ACCESS_KEY=asdfghjk
+      - DEFAULT_REGION=us-east-1
+      - DEBUG=${DEBUG:-0}
+      - SERVICES=s3
